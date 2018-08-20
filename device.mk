@@ -328,7 +328,8 @@ PRODUCT_PACKAGES += \
     KarnaPowerProfile \
     KarnaSettingsProviderOverlay \
     SuryaSettingsProviderOverlay \
-    NotchBarKiller
+    NotchBarKiller \
+    NoCutoutOverlay
     
 # PartsBin
 PRODUCT_PACKAGES += \
