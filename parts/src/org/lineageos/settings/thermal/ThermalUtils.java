@@ -24,7 +24,6 @@ import android.os.UserHandle;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.utils.FileUtils;
-import org.lineageos.settings.utils.RefreshRateUtils;
 
 public final class ThermalUtils {
 
@@ -51,14 +50,12 @@ public final class ThermalUtils {
     private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
 
     private SharedPreferences mSharedPrefs;
-    private static Context mContext;
 
     protected ThermalUtils(Context context) {
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     public static void initialize(Context context) {
-        mContext = context;
         if (isServiceEnabled(context))
             startService(context);
         else
@@ -140,7 +137,6 @@ public final class ThermalUtils {
 
     protected static void setDefaultThermalProfile() {
         FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_DEFAULT);
-        RefreshRateUtils.setFPS(RefreshRateUtils.getRefreshRate(mContext)); // default Hz
     }
 
     protected void setThermalProfile(String packageName) {
@@ -148,25 +144,19 @@ public final class ThermalUtils {
         String modes[];
         String state = THERMAL_STATE_DEFAULT;
 
-        RefreshRateUtils.setFPS(RefreshRateUtils.getRefreshRate(mContext)); // default Hz
-
         if (value != null) {
             modes = value.split(":");
 
             if (modes[0].contains(packageName + ",")) {
                 state = THERMAL_STATE_BENCHMARK;
-                RefreshRateUtils.setFPS(4); // 120 Hz
             } else if (modes[1].contains(packageName + ",")) {
                 state = THERMAL_STATE_CAMERA;
             } else if (modes[2].contains(packageName + ",")) {
                 state = THERMAL_STATE_DIALER;
-                RefreshRateUtils.setFPS(2); // 60 Hz
             } else if (modes[3].contains(packageName + ",")) {
                 state = THERMAL_STATE_GAMING;
-                RefreshRateUtils.setFPS(3); // 90 Hz
             }
         }
-
         FileUtils.writeLine(THERMAL_SCONFIG, state);
     }
 }
