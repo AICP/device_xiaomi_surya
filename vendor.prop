@@ -38,3 +38,7 @@ persist.vendor.cp.vbus_offset_mv=1040
 
 # Media
 vendor.media.target.version=2
+
+# Support otg reverse charge
+persist.vendor.otg_control=true
+
