@@ -1,2 +1,6 @@
+# Button jack mode & switch
+persist.audio.button_jack.profile=volume
+persist.audio.button_jack.switch=0
+
 # System prop for NFC DT
 ro.nfc.port=I2C
