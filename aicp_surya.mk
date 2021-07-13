@@ -37,4 +37,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Fingerprint
 PRODUCT_OVERRIDE_INFO := true
-PRODUCT_OVERRIDE_FINGERPRINT := google/sunfish/sunfish:11/RQ2A.210505.002/7246365:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/sunfish/sunfish:11/RQ3A.210705.001/7380771:user/release-keys
