@@ -100,8 +100,8 @@ void vendor_load_properties() {
         }
     }
 
-    fingerprint = "google/sunfish/sunfish:11/RQ3A.211001.001/7641976:user/release-keys";
-    description = "sunfish-user 11 RQ3A.211001.001 7641976 release-keys";
+    fingerprint = "google/redfin/redfin:12/SP1A.211105.003/7757856:user/release-keys";
+    description = "redfin-user 12 SP1A.211105.003 7757856 release-keys";
 
     set_ro_build_prop("fingerprint", fingerprint);
     set_ro_product_prop("device", device);
