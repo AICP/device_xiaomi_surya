@@ -334,10 +334,6 @@ PRODUCT_PACKAGES += \
     KarnaSettingsProviderOverlay \
     SuryaSettingsProviderOverlay \
     NotchBarKiller \
-    
-# PartsBin
-PRODUCT_PACKAGES += \
-    PartsBin
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
